@@ -14,11 +14,11 @@ sudo make install
 
 # Generic Information
 
-*libsecp256k1 Context*
+libsecp256k1 Context
 
 We create a global secp256k1 context (g_ctx) for all threads to share.
 
-*Parse the Starting Compressed Pubkey*
+Parse the Starting Compressed Pubkey
 
 We convert the hex string (e.g. "0345f3...") into 33 bytes and call secp256k1_ec_pubkey_parse.
 
