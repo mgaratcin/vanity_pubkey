@@ -35,3 +35,6 @@ Stop Condition
 
 We have a global atomic boolean g_found. If any thread finds a match, it sets g_found = true.
 All other threads will see that and stop looping.
+
+g++ -std=c++11 -O3 -I/usr/local/include vanity_pubkey.cpp -o vanity_pubkey -L/usr/local/lib -lsecp256k1 -lssl -lcrypto -lpthread
+./vanity_pubkey
