@@ -8,7 +8,7 @@ sudo apt-get install git automake libtool pkg-config build-essential
 git clone https://github.com/bitcoin-core/secp256k1.git
 cd secp256k1
 ./autogen.sh
-./configure --enable-module-recovery # Recovery is optional, but often useful
+./configure --enable-module-recovery
 make
 sudo make install
 
