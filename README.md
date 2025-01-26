@@ -5,12 +5,12 @@ sudo apt-get install libssl-dev
 sudo apt-get update
 sudo apt-get install git automake libtool pkg-config build-essential
 
-git clone https://github.com/bitcoin-core/secp256k1.git
-cd secp256k1
-./autogen.sh
-./configure --enable-module-recovery
-make
-sudo make install
+1) git clone https://github.com/bitcoin-core/secp256k1.git
+2) cd secp256k1
+3) ./autogen.sh
+4) ./configure --enable-module-recovery
+5) make
+6) sudo make install
 
 # Generic Information
 
