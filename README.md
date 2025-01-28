@@ -1,8 +1,11 @@
+160 hash prefix vanity generator based on ec operations performed on pub keys only. Point addition scales pub keys by an increment of one and searches for a desired 160 target, starting from a set secp256k1 pub key.
+
 Usage requires libsecp256k1 and OpenSSL isntalls.  
 
 sudo apt-get install libssl-dev
 
 sudo apt-get update
+
 sudo apt-get install git automake libtool pkg-config build-essential
 
 1) git clone https://github.com/bitcoin-core/secp256k1.git
@@ -29,11 +32,13 @@ The main point is 𝑃 Each thread 𝑖 starts at 𝑃 + 𝑖 ⋅ 𝐺 We do thi
 Iteration
 
 On each loop, the thread serializes the current point to a 33‐byte compressed form, does HASH160 on it, and checks the hex prefix.
+
 If it doesn’t match, it adds NUM_THREADS ⋅ 𝐺 to jump to the next candidate for that thread.
 
 Stop Condition
 
 We have a global atomic boolean g_found. If any thread finds a match, it sets g_found = true.
+
 All other threads will see that and stop looping.
 
 g++ -std=c++11 -O3 -I/usr/local/include vanity_pubkey.cpp -o vanity_pubkey -L/usr/local/lib -lsecp256k1 -lssl -lcrypto -lpthread
