@@ -1,6 +1,6 @@
 160 hash prefix vanity generator based on ec operations performed on pub keys only. Point addition scales pub keys by an increment of one and searches for a desired 160 target, starting from a set secp256k1 pub key.
 
-Usage requires libsecp256k1 and OpenSSL isntalls.  
+Usage requires libsecp256k1 and OpenSSL installs.  
 
 sudo apt-get install libssl-dev
 
