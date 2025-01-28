@@ -1,4 +1,4 @@
-Usage requires libsecp256k1 and OpenSSL isntalls.
+Usage requires libsecp256k1 and OpenSSL isntalls. 
 
 sudo apt-get install libssl-dev
 
